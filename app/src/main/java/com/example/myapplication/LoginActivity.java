@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,10 +31,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        TextView user = (TextView) findViewById(R.id.editUser);
-        TextView psw = (TextView) findViewById(R.id.editPassword);
-        Button loginbtn = (Button) findViewById(R.id.buttonLogin);
-        Button registerbtn = (Button) findViewById(R.id.buttonRegister);
+        EditText user = findViewById(R.id.editName);
+        EditText psw = findViewById(R.id.editPassword);
+        Button loginbtn = findViewById(R.id.buttonLogin);
+        Button registerbtn = findViewById(R.id.buttonRegister);
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                 Gson gson = new GsonBuilder().setLenient().create();
                 Retrofit retrofit = new Retrofit.Builder().baseUrl(RetrofitAPI.BASE_URL).addConverterFactory(GsonConverterFactory.create(gson)).build();
                 RetrofitAPI gerritAPI = retrofit.create(RetrofitAPI.class);
-                Call<User> call = gerritAPI.añadir(new UserData(userName, null, null, password));
+                Call<User> call = gerritAPI.login(new UserData(userName, null, null, password));
                 call.enqueue(new Callback<User>() {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {
