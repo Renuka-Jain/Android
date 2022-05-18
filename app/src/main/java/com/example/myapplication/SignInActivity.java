@@ -41,9 +41,6 @@ public class SignInActivity extends AppCompatActivity {
         passTxt = findViewById(R.id.editPass);
     }
 
-
-
-
     public void buttonLOG(android.view.View v) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
@@ -52,7 +49,7 @@ public class SignInActivity extends AppCompatActivity {
     public void buttonSIGN(android.view.View v) {
         if (nameTxt.getText().toString().isEmpty() || surnameTxt.getText().toString().isEmpty() || mailTxt.getText().toString().isEmpty() || passTxt.getText().toString().isEmpty()) {
             Toast.makeText(SignInActivity.this, "Please enter all the values", Toast.LENGTH_SHORT).show();
-            textView.setText("error");
+
             return;
         }
         postData(nameTxt.getText().toString(), surnameTxt.getText().toString(), mailTxt.getText().toString(), passTxt.getText().toString());
@@ -62,7 +59,7 @@ public class SignInActivity extends AppCompatActivity {
         Gson gson = new GsonBuilder().setLenient().create();
         Retrofit retrofit = new Retrofit.Builder().baseUrl(RetrofitAPI.BASE_URL).addConverterFactory(GsonConverterFactory.create(gson)).build();
         RetrofitAPI gerritAPI = retrofit.create(RetrofitAPI.class);
-        Call<User> call = gerritAPI.añadir(new UserData(name,surname,mail,pass));
+        Call<User> call = gerritAPI.add(new UserData(name,surname,mail,pass));
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {

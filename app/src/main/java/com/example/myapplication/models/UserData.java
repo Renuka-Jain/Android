@@ -12,14 +12,18 @@ public class UserData {
 
     public UserData(String name, String username, String mail, String password) {
         this.name = name;
-        this.username=username;
-        this.mail=mail;
-        this.password=password;
+        this.username = username;
+        this.mail = mail;
+        this.password = password;
         Random rand = new Random();
         int upperbound = 1000000;
         //generate random values from 0-24
         int idr = rand.nextInt(upperbound);
         this.id= Integer.toString(idr);
+
+    }
+
+    public UserData(){
 
     }
 
