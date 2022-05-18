@@ -29,8 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        textView = findViewById(R.id.textView);
-        userName = findViewById(R.id.editName);
+        textView = findViewById(R.id.textView5);
+        userName = findViewById(R.id.editUser);
         psw = findViewById(R.id.editPassword);
     }
 
@@ -40,7 +40,8 @@ public class LoginActivity extends AppCompatActivity {
 
             return;
         }
-        postData(userName.getText().toString(), psw.getText().toString());
+        else
+            postData(this.userName.getText().toString(), this.psw.getText().toString());
     }
 
 
