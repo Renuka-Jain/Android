@@ -55,24 +55,29 @@ public class SignInActivity extends AppCompatActivity {
         postData(nameTxt.getText().toString(), surnameTxt.getText().toString(), mailTxt.getText().toString(), passTxt.getText().toString());
     }
 
-    private void postData (String name, String surname, String mail, String pass){
+    private void postData(String name, String surname, String mail, String pass) {
+
+
+
+        //Log.i("Grup3", postData);
         Gson gson = new GsonBuilder().setLenient().create();
         Retrofit retrofit = new Retrofit.Builder().baseUrl(RetrofitAPI.BASE_URL).addConverterFactory(GsonConverterFactory.create(gson)).build();
         RetrofitAPI gerritAPI = retrofit.create(RetrofitAPI.class);
-        Call<User> call = gerritAPI.add(new UserData(name,surname,mail,pass));
+        Call<User> call = gerritAPI.add(new UserData(name, surname, mail, pass));
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 int variable = response.code();
-                Log.i("REGISTER CODE", ":"+variable);
-                if(response.isSuccessful()){
+                Log.i("REGISTER CODE", ":" + variable);
+                if (response.isSuccessful()) {
                     User user = response.body();
-                    Log.i("REGISTER", "OK"+user);
+                    Log.i("REGISTER", "OK" + user);
 
                     Toast.makeText(SignInActivity.this, "register okkk", Toast.LENGTH_LONG).show();
-
-                }
-                else{
+                    Intent intent = new Intent(SignInActivity.this, LoginActivity.class);
+                    //intent.p
+                    startActivity(intent);
+                } else {
                     Toast.makeText(SignInActivity.this, "EL NOM D'USUARI INTRODUIT JA EXISTEIX, PORVA AMB UN ALTRE DIFERENT", Toast.LENGTH_LONG).show();
                 }
             }
