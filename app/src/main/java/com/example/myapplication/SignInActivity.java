@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.models.UserData;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -71,12 +73,22 @@ public class SignInActivity extends AppCompatActivity {
                 Log.i("REGISTER CODE", ":" + variable);
                 if (response.isSuccessful()) {
                     User user = response.body();
+                    String userNom = user.getUsername();
+                    Log.i("Name", ":"+ userNom);
+                    String userPsw = user.getPass();
+                    Log.i("Psw", ":"+ userPsw);
                     Log.i("REGISTER", "OK" + user);
 
                     Toast.makeText(SignInActivity.this, "register okkk", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(SignInActivity.this, LoginActivity.class);
                     //intent.p
                     startActivity(intent);
+                    SharedPreferences sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("User", userNom);
+                    editor.putString("psw", userPsw);
+                    //editor.putString("mail", mail);
+                    editor.commit();
                 } else {
                     Toast.makeText(SignInActivity.this, "EL NOM D'USUARI INTRODUIT JA EXISTEIX, PORVA AMB UN ALTRE DIFERENT", Toast.LENGTH_LONG).show();
                 }
