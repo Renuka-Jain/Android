@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                         Log.i("Mail", ":"+userMail);*/
 
                         Log.i("LOGIN", "OK"+user);
-                        Intent intent = new Intent(getApplicationContext(), MiddleScreenActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                         startActivity(intent);
                         SharedPreferences sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPref.edit();

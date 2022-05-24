@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -25,9 +27,13 @@ public class SplashScreen extends AppCompatActivity {
                 } catch(InterruptedException e) {}
                 finally {
                     finish();
-
+                    SharedPreferences sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE);
                     Intent i = new Intent();
-                    i.setClass(SplashScreen.this, SignInActivity.class);
+                    if (sharedPref.getString("User","")!=null) {
+                        i.setClass(SplashScreen.this, MenuActivity.class);
+                    }else{
+                        i.setClass(SplashScreen.this, LoginActivity.class);
+                    }
                     startActivity(i);
 
                     //stop();
