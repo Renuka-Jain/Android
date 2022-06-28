@@ -48,9 +48,14 @@ public interface RetrofitAPI {
     Call<List<Game>> getRankingAll();
 
     @GET("game/{username}")
-    Call<List<Stats>> getRankingUser(@Path("username") String username);
+    Call<List<Game>> getRankingUser(@Path("username") String username);
 
     @GET("user/userInventoryList/{username}")
     Call<List<Inventory>> getInventoryUser(@Path("username") String username);
 
+    @GET("FAQ/get")
+    Call<List<FAQs>> getFAQs();
+
+    @POST("question/question")
+    Call<Question> question(@Body Question question);
 }

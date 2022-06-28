@@ -36,7 +36,7 @@ public class InventoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tienda);
+        setContentView(R.layout.activity_inventory);
         SharedPreferences sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE);
         username = sharedPref.getString("User",null);
 

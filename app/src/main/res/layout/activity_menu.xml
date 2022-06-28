@@ -8,11 +8,24 @@
     tools:context=".MenuActivity">
 
     <Button
+        android:id="@+id/buttonrankFaqs"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="28dp"
+        android:onClick="buttonFAQS"
+        android:text="FAQs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toEndOf="@+id/buttonIssues"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLOGOUT" />
+
+    <Button
         android:id="@+id/button"
         android:layout_width="120dp"
         android:layout_height="80dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="70dp"
+        android:onClick="buttonPlay"
         android:text="Juego"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -77,14 +90,36 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonGoItems" />
 
     <Button
-        android:id="@+id/buttonrankUser"
+        android:id="@+id/buttonIssues"
         android:layout_width="120dp"
         android:layout_height="80dp"
         android:layout_marginStart="70dp"
         android:layout_marginTop="30dp"
-        android:onClick="buttonRankingUser"
-        android:text="INVENTORY"
+        android:onClick="buttonIssues"
+        android:text="ISSUES"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonInventory" />
+
+    <Button
+        android:id="@+id/buttonForum"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:onClick="buttonQuestion"
+        android:text="FORUM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonIssues" />
+
+    <Button
+        android:id="@+id/buttonMyRecord"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:text="MY RECORDS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toEndOf="@+id/buttonForum"
+        app:layout_constraintTop_toBottomOf="@+id/buttonrankFaqs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

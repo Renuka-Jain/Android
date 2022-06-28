@@ -44,5 +44,15 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, InventoryActivity.class);
         startActivity(intent);
     }
+    public void buttonPlay(android.view.View v) {
+        Intent intent = new Intent(this, StartGameActivity.class);
+        startActivity(intent);
+    }
+    public void buttonQuestion(android.view.View v) {
+        Intent intent = new Intent(this, QuestionActivity.class);
+        startActivity(intent);
+    }
+
+
 
 }

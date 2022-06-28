@@ -81,16 +81,6 @@
                 android:layout_toEndOf="@+id/textRecyclerDATE"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textRecyclerDATE"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="24dp"
-                android:layout_toStartOf="@+id/imageViewRecycler"
-                android:text="buy" />
-
         </RelativeLayout>
 
     </LinearLayout>

@@ -76,7 +76,7 @@ public class SignInActivity extends AppCompatActivity {
                     Log.i("Psw", ":"+ userPsw);
                     Log.i("REGISTER", "OK" + user);
 
-                    Toast.makeText(SignInActivity.this, "register okkk", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignInActivity.this, "register properly done", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(SignInActivity.this, LoginActivity.class);
                     //intent.p
                     startActivity(intent);

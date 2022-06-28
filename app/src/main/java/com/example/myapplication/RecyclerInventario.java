@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,7 +43,10 @@ public class RecyclerInventario extends RecyclerView.Adapter<RecyclerInventario.
         holder.date.setText(String.valueOf(List.get(position).getQuantItem()));
         //String points = String.valueOf(List.get(position).ge);
         //holder.score.setText(points);
-        //Picasso.with(context).load(List.get(position).getImage()).into(holder.avatar);
+        if (List.get(position).getNameItem()=="Barrita Energetica")
+            Picasso.with(context).load("https://i.ibb.co/9tYQM4y/barrita.jpg").into(holder.avatar);
+        else
+            Picasso.with(context).load("https://i.ibb.co/s5GFKGL/astronautablack.png").into(holder.avatar);
     }
 
     @Override
