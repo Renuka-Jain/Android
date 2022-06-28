@@ -13,12 +13,32 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".MainFAQs"
             android:exported="false" />
         <activity
-            android:name=".ui.login.LoginActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_login2" />
+            android:name=".RankingUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UnityHandlerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GameSaveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InventoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TiendaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RankingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".MenuActivity"
             android:exported="false" />
